@@ -33,6 +33,7 @@ int main() {
   printf("Testing \"%s\",\n Standard: %lu,\n Homemade: %d\n\n", s2, strlen(s2), rtsnel(s2));
   printf("Testing \"%s\",\n Standard: %lu,\n Homemade: %d\n\n", s3, strlen(s3), rtsnel(s3));
   
+  printf("\n======================================\n")
   printf("Strcpy:\n");
   printf("s1: %s, s2: %s, s3: %s, s4: %s\n", s0, s1, s2, s3);
   printf(" Standard: NULL to \"hello\": %s\n", strcpy(s1, s0));
