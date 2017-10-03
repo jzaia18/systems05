@@ -37,6 +37,7 @@ int main() {
   printf("s1: %s, s2: %s, s3: %s, s4: %s\n", s0, s1, s2, s3);
   printf(" Standard: NULL to \"hello\": %s\n", strcpy(s1, s0));
   printf(" Homemade: \"??w?\" to \"goodbye\": %s\n", rtsypc(s3, s2));
+  printf("s1: %s, s2: %s, s3: %s, s4: %s\n", s0, s1, s2, s3);
   
   return 0;
 }
