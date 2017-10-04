@@ -31,13 +31,20 @@ char * rtsnypc(char * dest, char * src, int n) {
   return temp;
 }
 
+// Homemade strcat
+char * rtstac(char * dest, char * src) {
+  char * temp = dest;
+  dest += strlen(dest);
+  while (*dest++ = *src++);
+  return temp;
+}
+
 
 // Homemade strcmp()
 int rtspmc(char *s1, char *s2) {
   while ( *s1++ == *s2++ && *s1 != 0);
   return *--s1 - *--s2;
 }
-
 
 int main() {
   char s0[] = "";
@@ -49,6 +56,11 @@ int main() {
   char s5[] = "hell";
   char s6[] = "Hello";
   char s7[] = ")(";
+
+  char s8[] = "Pro";
+  char s9[] = "form";
+  char s10[] = "Yam";
+  char s11[] = "aha";
   
   printf("Strlen:\n\n");
   printf("Testing \"%s\",\n Standard: %lu\n Homemade: %d\n\n", s0, strlen(s0), rtsnel(s0));
@@ -77,8 +89,16 @@ int main() {
 
   printf("Strncpy:\n\n");
   printf("s4: %s, s5: %s, s6: %s, s7: %s\n", s4, s5, s6, s7);
-  printf(" Standard: Copying 3 chars of \"hell\" to \"hello\": %s\n", strncpy(s4, s5, 3));
+  printf(" Standard: Copying 3 chars of \")(\" to \"hello\": %s\n", strncpy(s4, s7, 3));
   printf(" Homemade: Copying 3 chars of \")(\" to \"Hello\": %s\n", rtsnypc(s6, s7, 3));
+  printf("s4: %s, s5: %s, s6: %s, s7: %s\n", s4, s5, s6, s7);
+
+  printf("\n=============================================\n");
+  
+  printf("Strcat:\n\n");
+  printf("s8: %s, s9: %s, s10: %s, s11: %s\n", s8, s9, s10, s11);
+  printf(" Standard: %s\n", strcat(s8, s9));
+  printf(" Homemade: %s\n", rtstac(s10, s11));
   printf("s4: %s, s5: %s, s6: %s, s7: %s\n", s4, s5, s6, s7);
 
   printf("\n=============================================\n");
