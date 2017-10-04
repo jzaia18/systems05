@@ -89,8 +89,8 @@ int main() {
 
   printf("Strchr:\n\n");
   printf("s0: %s, s1: %s, s2: %s, s3: %s\n", s0, s1, s2, s3);
-  printf(" Standard: %s\n", strchr(s1, 'l'));
-  printf(" Homemade: %s\n", rtsrhc(s1, 'l'));
+  printf(" Standard: Searching for \'l\' in \"Hello\"%s\n", strchr(s1, 'l'));
+  printf(" Homemade: Searching for \'l\' in \"Hello\" %s\n", rtsrhc(s1, 'l'));
   
   printf("\n=============================================\n");
   
@@ -112,8 +112,8 @@ int main() {
   
   printf("Strcat:\n\n");
   printf("s8: %s, s9: %s, s10: %s, s11: %s\n", s8, s9, s10, s11);
-  printf(" Standard: %s\n", strcat(s8, s9));
-  printf(" Homemade: %s\n", rtstac(s10, s11));
+  printf(" Standard: Concatenating \"form\" to \"Pro\" %s\n", strcat(s8, s9));
+  printf(" Homemade: Concatenating \"aha\" to \"Yam\"%s\n", rtstac(s10, s11));
   printf("s4: %s, s5: %s, s6: %s, s7: %s\n", s4, s5, s6, s7);
 
   printf("\n=============================================\n");
