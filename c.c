@@ -19,7 +19,7 @@ int rtsnel(char * rra) {
 // Homemade strcpy()
 char * rtsypc(char * dest, char * src) {
   char * temp = dest;
-  while (*dest++ = *src++);
+  while (*(dest++) = *(src++));
   return temp;
 }
 
@@ -27,23 +27,31 @@ char * rtsypc(char * dest, char * src) {
 char * rtsnypc(char * dest, char * src, int n) {
   int i = 0;
   char * temp = dest;
-  while (i++ < n && (*dest++ = *src++));
+  while (i++ < n && (*(dest++) = *(src++)));
   return temp;
 }
 
-// Homemade strcat
+// Homemade strcat()
 char * rtstac(char * dest, char * src) {
   char * temp = dest;
   dest += strlen(dest);
-  while (*dest++ = *src++);
+  while (*(dest++) = *(src++));
   return temp;
 }
 
-
 // Homemade strcmp()
 int rtspmc(char *s1, char *s2) {
-  while ( *s1++ == *s2++ && *s1 != 0);
+  while (*s1++ == *s2++ && *s1 != 0);
   return *--s1 - *--s2;
+}
+
+// Homemade strchr()
+char * rtsrhc(char * str, char c) {
+  while (*(str++) != c){
+    if (str == 0) return NULL;
+  }
+  return --str;
+
 }
 
 int main() {
@@ -79,6 +87,13 @@ int main() {
 
   printf("\n=============================================\n");
 
+  printf("Strchr:\n\n");
+  printf("s0: %s, s1: %s, s2: %s, s3: %s\n", s0, s1, s2, s3);
+  printf(" Standard: %s\n", strchr(s1, 'l'));
+  printf(" Homemade: %s\n", rtsrhc(s1, 'l'));
+  
+  printf("\n=============================================\n");
+  
   printf("Strcpy:\n\n");
   printf("s1: %s, s2: %s, s3: %s, s4: %s\n", s0, s1, s2, s3);
   printf(" Standard: Copying NULL to \"hello\": %s\n", strcpy(s1, s0));
@@ -103,5 +118,6 @@ int main() {
 
   printf("\n=============================================\n");
   
+ 
   return 0;
 }
