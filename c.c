@@ -48,7 +48,7 @@ int rtspmc(char *s1, char *s2) {
 // Homemade strchr()
 char * rtsrhc(char * str, char c) {
   while (*(str++) != c){
-    if (str == 0) return NULL;
+    if (!str) return NULL;
   }
   return --str;
 
